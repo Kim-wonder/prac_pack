@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>투두두</title>
+    </head>
+    <body>
+        <style>
+            .wrap{
+                               
+                padding: 10px 10px 10px 10px;
+                background-color: rgb(188, 224, 238);
+                border: 1px solid rgb(196, 196, 196);
+                border-radius: 10px;
+                display: flex;
+                gap: 20px;
+
+            }
+            
+            .taskBox{
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(204, 204, 204);
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                width: 200px;                
+            }
+            button{
+                width: calc(80%-20px);
+            }
+            
+            button:hover{
+                background-color: rgb(164, 212, 226);
+                
+            }
+
+        </style>
+        <h1>오늘 할 일</h1>
+        <hr/>
+        <div class="wrap">
+            <div class="taskBox">            
+                <h3>고양이 밥 주기</h3>
+                <p>고양이 물, 사료 챙기기</p>
+                <button onclick="backgroundColorChange(0)">완료</button>
+            </div>
+            <div class="taskBox">            
+                <h3>리액트 2주차 듣기</h3>
+                <p>8번까지 듣기</p>
+                <button onclick="backgroundColorChange(1)">완료</button>
+            </div>
+        </div>
+
+
+        <div class="wrap">
+            <div class="taskBox">            
+                <h3>개인과제 시작하기</h3>
+                <p>폴더 만들고 구조 잡기</p>
+                <button onclick="backgroundColorChange(2)">완료</button>
+            </div>
+            <div class="taskBox">            
+                <h3>노마드코드 듣기</h3>
+                <p>바닐라 JS부터 시작</p>
+                <button onclick="backgroundColorChange(3)">완료</button>
+            </div>
+        </div>
+        <script>
+            function backgroundColorChange(index){
+            //    console.log(document.getElementsByClassName('taskBox'));
+
+                let taskBox = document.getElementsByClassName('taskBox')[index];
+                taskBox.style.backgroundColor='yellow';
+            }
+
+            function sayHi (event){
+                console.log("Hello");
+            }
+            
+            const buttons = document.getElementsByTagName("button");
+            for(i=0; i<buttons.length; i++){
+                buttons[i].addEventListener("click",sayHi);
+            }
+        </script>
+    </body>
+</html>
+
